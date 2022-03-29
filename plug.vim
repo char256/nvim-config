@@ -48,6 +48,9 @@ Plug 'git@gitee.com:vimplugmirror/bclose.vim'
 "查看mark
 Plug 'git@gitee.com:vimplugmirror/vim-signature.git'
 
+"lazigit
+Plug 'git@gitee.com:vimplugmirror/lazygit.nvim.git'
+
 "美化起始页
 Plug 'git@gitee.com:vimplugmirror/vim-startify.git'
 
@@ -64,6 +67,10 @@ Plug 'git@gitee.com:vimplugmirror/jedi-vim.git'
 let g:jedi#completions_enabled = 0
 " open the go-to function in split, not another buffer
 let g:jedi#use_splits_not_buffers = "right"
+
+"LeaderF
+Plug 'git@gitee.com:vimplugmirror/LeaderF.git', { 'do': ':LeaderfInstallCExtension' } " 编译的时候要在conda环境下，因为这个编译需要python.h
+let g:Lf_PreviewInPopup = 1 " 使用popup mode
 
 " Unmanaged plugin (manually installed and updated)
 " Plug '~/my-prototype-plugin'
@@ -111,3 +118,6 @@ call plug#end()
         " 打开行高亮, 定义行高亮样式
         set cursorline
         highlight CursorLine ctermfg=None ctermbg=236 guifg=None guibg=#111111
+
+    "nerdtree
+        map st :NERDTreeToggle<cr>
