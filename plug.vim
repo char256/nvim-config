@@ -70,7 +70,11 @@ let g:jedi#use_splits_not_buffers = "right"
 
 "LeaderF
 Plug 'git@gitee.com:vimplugmirror/LeaderF.git', { 'do': ':LeaderfInstallCExtension' } " 编译的时候要在conda环境下，因为这个编译需要python.h
+let g:Lf_WindowPosition = 'popup' " popup mode
 let g:Lf_PreviewInPopup = 1 " 使用popup mode
+
+"floaterm :小窗打开terminal
+Plug 'git@gitee.com:vimplugmirror/vim-floaterm.git'
 
 " Unmanaged plugin (manually installed and updated)
 " Plug '~/my-prototype-plugin'
@@ -121,3 +125,14 @@ call plug#end()
 
     "nerdtree
         map st :NERDTreeToggle<cr>
+
+    "floaterm的按键绑定
+        "f7: 新建,f8: 下一个，f9：上一个，f12：显示/不显示
+        nnoremap   <silent>   <F7>    :FloatermNew<CR>
+        tnoremap   <silent>   <F7>    <C-\><C-n>:FloatermNew<CR>
+        nnoremap   <silent>   <F8>    :FloatermPrev<CR>
+        tnoremap   <silent>   <F8>    <C-\><C-n>:FloatermPrev<CR>
+        nnoremap   <silent>   <F9>    :FloatermNext<CR>
+        tnoremap   <silent>   <F9>    <C-\><C-n>:FloatermNext<CR>
+        nnoremap   <silent>   <F12>   :FloatermToggle<CR>
+        tnoremap   <silent>   <F12>   <C-\><C-n>:FloatermToggle<CR>
